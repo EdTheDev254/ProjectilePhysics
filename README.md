@@ -18,3 +18,5 @@ Simulates the trajectory of a projectile in real-time.
 3. Watch the real-time plot of the projectile's trajectory.
 
 **Note:** Adjust the plotting range based on the projectile's maximum range.
+
+![Simulation Preview](image.png)
