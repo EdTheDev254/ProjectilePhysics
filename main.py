@@ -79,9 +79,8 @@ def plot_trajectory_realtime(projectile, ax):
     except KeyboardInterrupt:
         pass  # Catch KeyboardInterrupt when the user closes the plot window
 
-    # ... (previous code)
-
     range_value = x
+
     # Second legend (max height and range) is placed below the first one at the top right
     second_legend = ax.legend([f"Max Height: {max_height_reached:.2f} m\nRange: {range_value:.2f} m"], loc='upper right', bbox_to_anchor=(1.0, 0.8), fontsize='small', facecolor='black', edgecolor='white', labelcolor='white')
     ax.add_artist(second_legend)
@@ -100,6 +99,7 @@ def main():
     max_height = projectile.calculate_max_height()
 
     fig, ax = plt.subplots(facecolor='black')  # Set window background color to black
+    
     ax.set_xlim(0, max_range + 500)  # Adjusted for better visualization
     ax.set_ylim(0, max_height + 200)  # Adjusted for better visualization
 
