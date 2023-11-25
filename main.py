@@ -105,25 +105,31 @@ def plot_trajectory_realtime(projectile, ax):
     plt.show()  # Display the final plot
 
 def main():
-    initial_speed = float(input("Enter initial speed (m/s): "))
-    launch_angle = float(input("Enter launch angle (degrees): "))
-    initial_height = float(input("Enter initial height (m): "))
-    time_step = float(input("Enter time step(lower values use lower time steps):"))
+    while True:
+        initial_speed = float(input("Enter initial speed (m/s): "))
+        launch_angle = float(input("Enter launch angle (degrees): "))
+        initial_height = float(input("Enter initial height (m): "))
+        time_step = float(input("Enter time step (lower values use lower time steps):"))
 
-    # Projectile Instance
-    projectile = Projectile(initial_speed, launch_angle, initial_height, time_step)
+        # Projectile Instance
+        projectile = Projectile(initial_speed, launch_angle, initial_height, time_step)
 
-    # Set the axes limits before starting the simulation
-    max_range = projectile.calculate_max_range()
-    max_height = projectile.calculate_max_height()
+        # Set the axes limits before starting the simulation
+        max_range = projectile.calculate_max_range()
+        max_height = projectile.calculate_max_height()
 
-    fig, ax = plt.subplots(facecolor='black')  # Set window background color to black
-    ax.set_xlim(0, max_range + 500)  # Adjusted for better visualization
-    ax.set_ylim(0, max_height + 200)  # Adjusted for better visualization
+        fig, ax = plt.subplots(facecolor='black')  # Set window background color to black
+        ax.set_xlim(0, max_range + 500)  # Adjusted for better visualization
+        ax.set_ylim(0, max_height + 200)  # Adjusted for better visualization
 
-    plot_trajectory_realtime(projectile, ax)
+        plot_trajectory_realtime(projectile, ax)
 
-    plt.show()  # Display the final plot
+        plt.show()  # Display the final plot
+
+        # Ask the user if they want to calculate for another projectile
+        user_input = input("Do you want to calculate for another projectile? (yes/no): ").lower()
+        if user_input != 'yes':
+            break
 
 if __name__ == "__main__":
     main()
