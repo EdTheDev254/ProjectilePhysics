@@ -19,4 +19,13 @@ Simulates the trajectory of a projectile in real-time.
 
 **Note:** Adjust the plotting range based on the projectile's maximum range.
 
+## Error with matplpotlib
+
+ - If you encounter an error with matplotlib
+ **ImportError: DLL load failed while importing _cext: The specified module could not be found**
+
+ - Execute the following in your terminal: **pip install msvc-runtime**
+
+
+
 ![Simulation Preview](image.png)
